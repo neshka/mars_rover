@@ -1,16 +1,15 @@
-const rover1 = {
-    
-    position: {
-        x: 0,
-        y: 0
-    },
-    
-    direction: 'N'
-};
+class Rover {
+  constructor(positionX, positionY, direction) {
 
+    this.position.x = positionX;
+    this.position.y = positionY;
 
-function turnLeft (rover){
-    switch(rover.direction) {
+    this.direction = direction;
+  }
+
+  //Method to turn left
+  turnLeft() {
+    switch(Rover.direction) {
         case 'N':
             rover.direction = 'W'
           break;
@@ -29,57 +28,67 @@ function turnLeft (rover){
       }
 
       console.log('New direction: ' + rover.direction)
-};
+  }
 
-function turnRight (rover){
-    switch(rover.direction) {
-        case 'N':
-            rover.direction = 'E'
-          break;
-        case 'E':
-            rover.direction = 'S'
-          break;
-        case 'S':
-            rover.direction = 'W'
-          break;
-        case 'W':
-            rover.direction = 'N'
-          break;
-        default:
-          //change for err?
-          rover.direction = rover.direction
-      }
+  turnRight() {
+  switch(rover.direction) {
+      case 'N':
+          rover.direction = 'E'
+        break;
+      case 'E':
+          rover.direction = 'S'
+        break;
+      case 'S':
+          rover.direction = 'W'
+        break;
+      case 'W':
+          rover.direction = 'N'
+        break;
+      default:
+        //change for err?
+        rover.direction = rover.direction
+    }
 
-      console.log('New direction: ' + rover.direction)
-};
+    console.log('New direction: ' + rover.direction)
+  }
 
+  move(){
+  switch(rover.direction) {
+      case 'N':
+        rover.position.y = rover.position.y + 1
+        break;
+      case 'E':
+      rover.position.x = rover.position.x + 1
+        break;
+      case 'S':
+      rover.position.y = rover.position.y - 1
+        break;
+      case 'W':
+      rover.position.x = rover.position.x - 1
+        break;
+      default:
+        //change for err?
+        //rover.position.x = rover.position.x,
+        //rover.position.y = rover.position.y
+    }
 
-function move(rover){
-    switch(rover.direction) {
-        case 'N':
-            rover.position.y = rover.position.y + 1
-          break;
-        case 'E':
-        rover.position.y = rover.position.x + 1
-          break;
-        case 'S':
-        rover.position.y = rover.position.y - 1
-          break;
-        case 'W':
-        rover.position.y = rover.position.x - 1
-          break;
-        default:
-          //change for err?
-          rover.position.x = rover.position.x,
-          rover.position.y = rover.position.y
-      }
+    if (rover.position.x > 10 || rover.position.y > 10 || rover.position.x < 0 || rover.position.y < 0){
+      console.log('This move is impossible.')
 
-      console.log('Updated position: x: ' + rover.position.x + ' , y: ' + rover.position.y)
-};
+    rover.position.x = rover.position.x,
+    rover.position.y = rover.position.y
 
+    }
+    else {
+      console.log('Updated position: x: ' + rover.position.x + ' , y: ' + rover.position.y);
+    }
+  }
 
-console.log(rover1.position.x);
-console.log(rover1.direction);
-console.log(turnLeft(rover1));
-console.log(turnRight(rover1));
-console.log(move(rover1));
+    position(){
+      return 'x: ' + this.position.x + 'y: ' + this.position.y;
+    }
+}
+
+const rover1 = new Rover(0,0,'N');
+
+console.log(rover1.position); 
