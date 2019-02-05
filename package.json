@@ -1,9 +1,9 @@
 {
-  "name": "js-test-project",
+  "name": "mars_rover",
   "version": "1.0.0",
-  "description": "A simple project with a single failing test",
+  "description": "A simple project: Mars_Rover",
   "scripts": {
-    "test": "mocha test/**/*spec.js"
+    "test": "mocha test/rover_test.js"
   },
   "dependencies": {
     "chai": "^4.1.2",
