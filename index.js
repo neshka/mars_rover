@@ -53,11 +53,33 @@ function turnRight (rover){
       console.log('New direction: ' + rover.direction)
 };
 
-function move(currentDirection){
 
+function move(rover){
+    switch(rover.direction) {
+        case 'N':
+            rover.position.y = rover.position.y + 1
+          break;
+        case 'E':
+        rover.position.y = rover.position.x + 1
+          break;
+        case 'S':
+        rover.position.y = rover.position.y - 1
+          break;
+        case 'W':
+        rover.position.y = rover.position.x - 1
+          break;
+        default:
+          //change for err?
+          rover.position.x = rover.position.x,
+          rover.position.y = rover.position.y
+      }
+
+      console.log('Updated position: x: ' + rover.position.x + ' , y: ' + rover.position.y)
 };
+
 
 console.log(rover1.position.x);
 console.log(rover1.direction);
 console.log(turnLeft(rover1));
 console.log(turnRight(rover1));
+console.log(move(rover1));
