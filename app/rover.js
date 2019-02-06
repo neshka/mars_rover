@@ -1,3 +1,20 @@
+class plateau {
+
+  constructor(sizeX, sizeY){
+    this.sizeX = sizeX;
+    this.sizeY = sizeY
+  }
+
+  setNewX(newSizeX){
+    this.sizeX = newSizeX;
+  }
+
+}
+
+function changePlateauSize(newX, newY){
+
+}
+
 class Rover {
 
   constructor(positionX, positionY, direction) {
@@ -87,7 +104,7 @@ class Rover {
         //rover.position.y = rover.position.y
     }
 
-    if (this.positionX > 10 || this.positionY > 10 || this.positionX < 0 || this.positionY < 0){
+    if (this.positionX > plateau.sizeX || this.positionY > plateau.sizeY || this.positionX < 0 || this.positionY < 0){
       console.log('This move is impossible.')
 
     this.positionX = this.positionX,
@@ -110,3 +127,4 @@ function sendInstruction(rover){
 
 
 module.exports.Rover = Rover;
+module.exports.plateau = plateau;
