@@ -9,62 +9,64 @@ class Rover {
 
   //Method to turn left
   turnLeft() {
-    switch(Rover.direction) {
+    switch(this.direction) {
         case 'N':
-            rover.direction = 'W'
+            this.direction = 'W'
           break;
         case 'E':
-            rover.direction = 'N'
+            this.direction = 'N'
           break;
         case 'S':
-            rover.direction = 'E'
+            this.direction = 'E'
           break;
         case 'W':
-            rover.direction = 'S'
+            this.direction = 'S'
           break;
         default:
           //change for err?
-          rover.direction = rover.direction
+          this.direction = this.direction
       }
 
-      console.log('New direction: ' + rover.direction)
+      console.log('New direction: ' + this.direction)
   }
 
+  //Method to turn right
   turnRight() {
-  switch(rover.direction) {
+  switch(this.direction) {
       case 'N':
-          rover.direction = 'E'
+          this.direction = 'E'
         break;
       case 'E':
-          rover.direction = 'S'
+          this.direction = 'S'
         break;
       case 'S':
-          rover.direction = 'W'
+          this.direction = 'W'
         break;
       case 'W':
-          rover.direction = 'N'
+          this.direction = 'N'
         break;
       default:
         //change for err?
-        rover.direction = rover.direction
+          this.direction = this.direction
     }
 
     console.log('New direction: ' + rover.direction)
   }
 
+  //Method to move forward
   move(){
-  switch(rover.direction) {
+  switch(this.direction) {
       case 'N':
-        rover.position.y = rover.position.y + 1
+        this.position.y = this.position.y + 1
         break;
       case 'E':
-      rover.position.x = rover.position.x + 1
+      this.position.x = this.position.x + 1
         break;
       case 'S':
-      rover.position.y = rover.position.y - 1
+      this.position.y = this.position.y - 1
         break;
       case 'W':
-      rover.position.x = rover.position.x - 1
+      this.position.x = this.position.x - 1
         break;
       default:
         //change for err?
@@ -72,23 +74,24 @@ class Rover {
         //rover.position.y = rover.position.y
     }
 
-    if (rover.position.x > 10 || rover.position.y > 10 || rover.position.x < 0 || rover.position.y < 0){
+    if (this.position.x > 10 || this.position.y > 10 || this.position.x < 0 || this.position.y < 0){
       console.log('This move is impossible.')
 
-    rover.position.x = rover.position.x,
-    rover.position.y = rover.position.y
+    this.position.x = this.position.x,
+    this.position.y = this.position.y
 
     }
     else {
-      console.log('Updated position: x: ' + rover.position.x + ' , y: ' + rover.position.y);
+      console.log('Updated position: x: ' + this.position.x + ' , y: ' + this.position.y);
     }
   }
 
     position(){
-      return 'x: ' + this.position.x + 'y: ' + this.position.y;
+      return 'x: ' + this.position.x + ' y: ' + this.position.y;
     }
 }
 
 const rover1 = new Rover(0,0,'N');
 
-console.log(rover1.position); 
+console.log(rover1.position()); 
+console.log(rover1.move()); 

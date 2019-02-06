@@ -2,9 +2,11 @@
 
 const chai = require('chai')
 const expect = chai.expect
+const rover = require("../app/rover");
 
-describe('A failing test', function () {
-  it('should fail', function () {
-    expect(true).to.equal(false);
-  })
-})
+describe('Rover', function() {
+  it('should exist', function() {
+      var rover = require("../app/rover");
+      expect(rover).to.not.be.undefined;
+  });
+});
