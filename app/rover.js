@@ -63,7 +63,7 @@ class Rover {
           this.direction = this.direction
     }
 
-    console.log('New direction: ' + rover.direction)
+    console.log('New direction: ' + this.direction)
   }
 
   //Method to move forward
