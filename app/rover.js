@@ -1,29 +1,19 @@
-const rover = {
-  
-  position: {
-    x: 0,
-    y: 0
-  },
-
-  direction: 'N'
-
-}
-
 class Rover {
+
   constructor(positionX, positionY, direction) {
 
-    this.position.x = positionX;
-    this.position.y = positionY;
+    this.positionX = positionX;
+    this.positionY = positionY;
 
     this.direction = direction;
   }
 
   getPositionX(){
-    return this.position.x;
+    return this.positionX;
   }
 
   getPositionY(){
-    return this.position.y;
+    return this.positionY;
   }
 
   getDirection(){
@@ -80,16 +70,16 @@ class Rover {
   move(){
   switch(this.direction) {
       case 'N':
-        this.position.y = this.position.y + 1
+        this.positionY = this.positionY + 1
         break;
       case 'E':
-      this.position.x = this.position.x + 1
+      this.positionX = this.positionX + 1
         break;
       case 'S':
-      this.position.y = this.position.y - 1
+      this.positionY = this.positionY - 1
         break;
       case 'W':
-      this.position.x = this.position.x - 1
+      this.positionX = this.positionX - 1
         break;
       default:
         //change for err?
@@ -97,23 +87,20 @@ class Rover {
         //rover.position.y = rover.position.y
     }
 
-    if (this.position.x > 10 || this.position.y > 10 || this.position.x < 0 || this.position.y < 0){
+    if (this.positionX > 10 || this.positionY > 10 || this.positionX < 0 || this.positionY < 0){
       console.log('This move is impossible.')
 
-    this.position.x = this.position.x,
-    this.position.y = this.position.y
+    this.positionX = this.positionX,
+    this.positionY = this.positionY
 
     }
     else {
-      console.log('Updated position: x: ' + this.position.x + ' , y: ' + this.position.y);
+      console.log('Updated position: x: ' + this.positionX + ' , y: ' + this.positionY);
     }
   }
-
-
 }
 
 const rover1 = new Rover(0,0,'N');
+console.log(rover1.getPositionX());
 
-
-
-//module.exports.Rover = Rover;
+module.exports.Rover = Rover;
