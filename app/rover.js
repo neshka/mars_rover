@@ -100,7 +100,13 @@ class Rover {
   }
 }
 
-const rover1 = new Rover(0,0,'N');
-console.log(rover1.getPositionX());
+function sendInstruction(rover){
+  //Insert instruction 
+  
+
+ 
+}
+
+
 
 module.exports.Rover = Rover;
