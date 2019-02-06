@@ -7,6 +7,18 @@ class Rover {
     this.direction = direction;
   }
 
+  getPositionX(){
+    return this.position.x;
+  }
+
+  getPositionY(){
+    return this.position.y;
+  }
+
+  getDirection(){
+    return this.direction;
+  }
+
   //Method to turn left
   turnLeft() {
     switch(this.direction) {
@@ -86,12 +98,11 @@ class Rover {
     }
   }
 
-    position(){
-      return 'x: ' + this.position.x + ' y: ' + this.position.y;
-    }
+
 }
 
 const rover1 = new Rover(0,0,'N');
 
-console.log(rover1.position()); 
-console.log(rover1.move()); 
+
+
+//module.exports.Rover = Rover;
